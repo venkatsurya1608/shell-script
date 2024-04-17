@@ -22,4 +22,7 @@ git commit -m "why -you-commited"
  git push -u origin main
 
 ...
- venkat
+ 
+ git add . ; git commit -m "some-message"; git push -u origin main
+
+ ...
