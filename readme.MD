@@ -6,15 +6,20 @@
 * start developing
 * Add the files to temp area
 ...
+
 git add <file-name>
+
 ...
 * commit the changes
 ...
+
 git commit -m "why -you-commited"
+
 ...
 * push the changes to Github/central repo
 ...
 
  git push -u origin main
+
 ...
  venkat
