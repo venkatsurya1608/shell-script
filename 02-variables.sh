@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Function for Ram's dialogue
-PERSON1=ram_dialogue
+PERSON1=$ram
 PERSON2=venkat_dialogue
 
 # Conversation between Ram and Venkat
