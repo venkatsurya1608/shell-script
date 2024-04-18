@@ -16,5 +16,3 @@ echo ::$PERSON1 "That sounds interesting! Tell me more about it."
 echo ::$PERSON2 "Sure, I'd love to. It's about..."
 
 # Add more dialogue as needed
-
-exit 0
