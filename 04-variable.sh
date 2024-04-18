@@ -1,9 +1,10 @@
 #!/bin/bash
 
-
+# Function for Ram's dialogue
 PERSON1=$1
 PERSON2=$2
 
+# Conversation between Ram and Venkat
 
 echo ::$PERSON1 "Hey Venkat, how's it going?"
 echo ::$PERSON2 "Hi Ram, I'm doing well, thanks for asking. How about you?"
@@ -14,5 +15,6 @@ echo ::$PERSON2 "I've been working on a new project lately, it's quite challengi
 echo ::$PERSON1 "That sounds interesting! Tell me more about it."
 echo ::$PERSON2 "Sure, I'd love to. It's about..."
 
+# Add more dialogue as needed
 
 exit 0
