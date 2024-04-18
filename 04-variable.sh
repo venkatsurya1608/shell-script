@@ -1,11 +1,18 @@
 #!/bin/bash
 
-#declaring of varible
+
 PERSON1=$1
 PERSON2=$2
 
-#referring variable
-echo "$PERSON1:: Hello $PERSON2, How are you?"
-echo "$PERSON2:: Hi $PERSON1, I am fine. How are you?"
-echo "$PERSON1:: I am fine too. how is your work?"
-echo "$PERSON2:: not bad. I am thinking to upgrade to DevOps"
+
+echo ::$PERSON1 "Hey Venkat, how's it going?"
+echo ::$PERSON2 "Hi Ram, I'm doing well, thanks for asking. How about you?"
+echo ::$PERSON1 "I'm good too, just busy with work as usual."
+echo ::$PERSON2 "Yeah, I know how that feels. Anything interesting happening?"
+echo ::$PERSON1 "Not much, just the usual routine. What about you?"
+echo ::$PERSON2 "I've been working on a new project lately, it's quite challenging but exciting."
+echo ::$PERSON1 "That sounds interesting! Tell me more about it."
+echo ::$PERSON2 "Sure, I'd love to. It's about..."
+
+
+exit 0
