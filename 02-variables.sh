@@ -11,4 +11,3 @@ echo "Not much, just the usual routine. What about you?"
 echo "I've been working on a new project lately, it's quite challenging but exciting."
 echo "That sounds interesting! Tell me more about it."
 echo "Sure, I'd love to. It's about..."
-
