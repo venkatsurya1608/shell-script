@@ -1,6 +1,6 @@
 #!/bin/bash
 
-userid=$(id -u)
+userid=$(id -u)     #userid capical or normal letter use
 
 if [ $userid -ne 0 ]
 
