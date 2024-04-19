@@ -1,8 +1,8 @@
 #!/bin/bash
 
-USERID=$(id -u)
+userid=$(id -u)
 
-if [ $USERID -ne 0 ]
+if [ $userid -ne 0 ]
 
 then 
 echo "please run this script wit root access"
