@@ -33,5 +33,5 @@ VALIDATE $? "Installing MySQL"
 dnf install git -y &>>$LOGFILE
 VALIDATE $? "Installing Git"
 
-dnf install gcc -y &>>$LOGFILE
+dnf install gddcc -y &>>$LOGFILE
 VALIDATE $? "Installing Gcc"
