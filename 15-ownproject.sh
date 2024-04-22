@@ -39,5 +39,7 @@ do
     else
         dnf install $i -y &>>$LOGFILE
         VALIDATE $? "Installation of $i"
+
+        echo -e "$2...$G SUCCESS $N"
     fi
 done
