@@ -42,5 +42,6 @@ do
 
         echo -e "$2...$G SUCCESS $N"
         echo -e "$2...$R FAILURE $N"
+        echo -e "$i if FAILURE ...$Y SKIPPING $N"
     fi
 done
