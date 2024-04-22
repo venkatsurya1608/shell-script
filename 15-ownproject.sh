@@ -41,5 +41,6 @@ do
         VALIDATE $? "Installation of $i"
 
         echo -e "$2...$G SUCCESS $N"
+        echo -e "$2...$R FAILURE $N"
     fi
 done
