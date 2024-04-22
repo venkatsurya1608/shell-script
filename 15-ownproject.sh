@@ -27,5 +27,5 @@ VALIDATE() {
   else
   echo "you are super user"
 
-  dnf install npm -y &>>$LOGFILE
-  VALIDATE $? "installing npm"
+ dnf install mysql -y &>>$LOGFILE
+ VALIDATE $? "Installing MySQL"
