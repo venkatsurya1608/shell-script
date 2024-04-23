@@ -7,6 +7,7 @@ LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
+Y="\e[33m"
 
 echo "enter DB password:"
 read mysql_root_password
@@ -49,5 +50,5 @@ then
     mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOGFILE
     VALIDATE $? "MySQL Root password Setup"
 else
-    echo -e "MySQL Root password is already setup... $Y SKIPPING $N"
+    echo -e "MySQL Root password is already setup...$Y SKIPPING $N"
 fi 
