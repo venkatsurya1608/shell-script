@@ -9,7 +9,8 @@ G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
-
+echo "enter DB password:"
+read mysql_root_password
 
 VALIDATE(){
    if [ $1 -ne 0 ] 
@@ -63,6 +64,24 @@ VALIDATE $? "Installing nodejs dependencies"
 
 cp /home/ec2-user/shell-script/backend.service /etc/systemd/system/backend.service &>>$LOGFILE
 VALIDATE $? "Copied backend service"
+
+systemctl daemon-reload &>>$LOGFILE
+VALIDATE $? "Daemon Reload"
+
+systemctl start backend &>>$LOGFILE
+VALIDATE $? "Starting backend"
+
+systemctl enable backend &>>$LOGFILE
+VALIDATE $? "Enabling backend"
+
+dnf install mysql -y &>>$LOGFILE
+VALIDATE $? "Installing MySQL Client"
+
+mysql -h db.venkatdevops1608.online -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGFILE
+VALIDATE $? "Schema loading"
+
+systemctl restart backend &>>$LOGFILE
+VALIDATE $? "Restarting Backend"
 
 
 
