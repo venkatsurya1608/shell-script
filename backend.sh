@@ -47,15 +47,20 @@ esle
    echo -e "Expense user already created...$Y SKIPPING $N"
 fi
 
-mkdir /app &>>$LOGFILE
+mkdir -p /app &>>$LOGFILE
 VALIDATE $? "create a app directory"
 
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOGFILE
 VALIDATE $? "inserting backend code"
 
-cd /app &>>$LOGFILE
-VALIDATE $? "change directory app"
+cd /app
+rm -rf /app/* 
+unzip /tmp/backend.zip
+VALIDATE $? "Extracting backend code"
 
 npm install &>>$LOGFILE
-VALIDATE $? "Installing npm"
+VALIDATE $? "Installing nodejs dependencies"
+
+#check your repo and path
+
 
