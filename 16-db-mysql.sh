@@ -41,7 +41,7 @@ VALIDATE $? "Starting Mysql server"
 mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
 VALIDATE $? "Mysql root password setup"
 
-mysql -h db.venkatdevops1608.online -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOGFILE
+mysql_secure_installation --set-root-pass ExpenseApp@1
 if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOGFILE
