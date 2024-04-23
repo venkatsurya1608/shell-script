@@ -44,7 +44,7 @@ then
    useradd expense &>>$LOGFILE
    VALIDATE $? "creating expense user"
 esle
-   echo -e "Expense user already created...$Y SKIpping $N"
+   echo -e "Expense user already created...$Y SKIPPING $N"
 fi
 
 mkdir /app &>>$LOGFILE
