@@ -41,11 +41,10 @@ VALIDATE $? "Installing nodejs"
 id expense &>>$LOGFILE
 if [ $? -ne 0 ]
 then
-
-useradd expense &>>$LOGFILE
-VALIDATE $? "creating expense user"
+   useradd expense &>>$LOGFILE
+   VALIDATE $? "creating expense user"
 esle
-  echo -e "Expense user already created...$Y SKIpping $N"
+   echo -e "Expense user already created...$Y SKIpping $N"
 fi
 
 mkdir /app &>>$LOGFILE
