@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 USERID=$(id -u)
@@ -12,7 +11,7 @@ N="\e[0m"
 echo "Script started executing at: $TIMESTAMP"
 
 VALIDATE(){
-   if [ $1 -ne 0 ]
+   if [ $1 -ne 0 ] 
    then
         echo -e "$2...$R FAILURE $N"
         exit 1
@@ -21,7 +20,7 @@ VALIDATE(){
     fi
 }
 
-if [ $USERID -ne 0 ]
+if [ $USERID -ne 0 ] 
 then
     echo "Please run this script with root access."
     exit 1 # manually exit if error comes.
@@ -29,11 +28,14 @@ else
     echo "You are super user."
 fi
 
-dnf install mysql -y &>>$LOGFILE
-VALIDATE $? "Installing MySQL"
+dnf install mysql-server -y &>>$LOGFILE
+VALIDATE $? "Installing Mysql server"
 
-dnf install git -y &>>$LOGFILE
-VALIDATE $? "Installing Git"
+systemctl enable mysqld &>>$LOGFILE
+VALIDATE $? "Enabling Mysql server"
 
-dnf install docker -y &>>$LOGFILE
-VALIDATE $? "Installing Docker"
+systemctl start mysqld &>>$LOGFILE
+VALIDATE $? "Starting Mysql server"
+
+mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
+VALIDATE $? "Mysql root password setup"
