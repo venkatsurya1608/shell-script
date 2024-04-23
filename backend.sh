@@ -38,8 +38,15 @@ VALIDATE $? "Enabling version 20 nodejs"
 dnf install nodejs -y &>>$LOGFILE
 VALIDATE $? "Installing nodejs"
 
+id expense &>>$LOGFILE
+if [ $? -ne 0 ]
+then
+
 useradd expense &>>$LOGFILE
-VALIDATE $? "user add expense"
+VALIDATE $? "creating expense user"
+esle
+  echo -e "Expense user already created...$Y SKIpping $N"
+fi
 
 mkdir /app &>>$LOGFILE
 VALIDATE $? "create a app directory"
@@ -49,7 +56,6 @@ VALIDATE $? "inserting backend code"
 
 cd /app &>>$LOGFILE
 VALIDATE $? "change directory app"
-
 
 npm install &>>$LOGFILE
 VALIDATE $? "Installing npm"
