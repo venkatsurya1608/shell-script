@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DISK_USAGE=$(df -hT | grep xfs)
+DISK_USAGE=$(df -hT | grep /)
 DISK_THRESHOLD=1
 MESSAGE=""
 
